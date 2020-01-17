@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { p5Component } from './p5.component';
+import { JoshComponent } from './josh.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    JoshComponent,
     p5Component
   ],
   imports: [
