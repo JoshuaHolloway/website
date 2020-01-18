@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import * as d3 from 'd3';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @Input() name = 'joshua';
+  @Input() name: string;
   // =========
   public x = 1;
   public y = 2;

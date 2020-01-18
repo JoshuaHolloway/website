@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OnInit, ElementRef, Renderer2 } from '@angular/core';
 import * as p5 from 'p5';
 
@@ -10,6 +10,9 @@ import * as p5 from 'p5';
   styleUrls: []
 })
 export class p5Component implements OnInit {
+
+  @Input() public xx: number;
+
   constructor(
     private el: ElementRef,
     private renderer: Renderer2
@@ -18,7 +21,7 @@ export class p5Component implements OnInit {
   ngOnInit() {
 
     new p5(p => {
-      const x = 401;
+      const x = this.xx;
       const y = 100;
 
       p.setup = () => {

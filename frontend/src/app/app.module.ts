@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { p5Component } from './p5.component';
 import { JoshComponent } from './josh.component';
+import { p5WrapperComp } from './p5Wrapper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JoshComponent,
+    p5WrapperComp,
     p5Component
   ],
   imports: [
