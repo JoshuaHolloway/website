@@ -61,7 +61,7 @@ import * as p5 from 'p5';
         </div>
       </div>
       <!-- ==== -->
-      <p5-component [xx]=x></p5-component>
+      <p5-component [xx]=x [yy]=y></p5-component>
       <!-- ==== -->
     </div>
     <!-- /container -->
@@ -72,35 +72,31 @@ export class JoshComponent implements OnInit {
   @Input() name: string;
   // =========
   public x = 100;
-  public y = 2;
+  public y = 100;
   public z = 3;
+  // =========
+  // https://indepth.dev/creating-a-sketchpad-with-angular-and-p5js/
+  // https://editor.p5js.org/Janglee123/sketches/HJ2RnrQzN
+  private canvas: any;
+  private sw = 2;
+  private c = [];
+  private strokeColor = 0;
   // =========
   onInput_x(event): void {
     this.x = event.target.value;
-
-    // this.update_p5(this.x, this.y);
-    //this.canvas.rect(this.x, this.y, 400, 100);
   }
   // =========
   onInput_y(event): void {
     this.y = event.target.value;
   }
   // =========
-  // https://indepth.dev/creating-a-sketchpad-with-angular-and-p5js/
-  canvas: any;
-  sw = 2;
-  c = [];
-  strokeColor = 0;
-
   constructor() { }
-
+  // =========
   ngOnInit() {
-    // this sketch was modified from the original
-    // https://editor.p5js.org/Janglee123/sketches/HJ2RnrQzN
     const sketch = s => {
       s.setup = () => {
         // let canvas2 = s.createCanvas(s.windowWidth - 200, s.windowHeight - 200);
-        let canvas2 = s.createCanvas(400, 200);
+        const canvas2 = s.createCanvas(400, 200);
         // creating a reference to the div here positions it so you can put things above and below
         // where the sketch is displayed
         canvas2.parent('sketch-holder');
