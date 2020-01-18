@@ -53,9 +53,6 @@ import * as p5 from 'p5';
         </div>
       </div>
       <!-- ==== -->
-      <!-- <p5-component [xx]=x></p5-component> -->
-      <!-- <app-p5-wrapper></app-p5-wrapper> -->
-      <!-- ==== -->
       <div class="row">
         <div class="col">
           <div class="sketch-container">
@@ -63,7 +60,9 @@ import * as p5 from 'p5';
           </div>
         </div>
       </div>
-
+      <!-- ==== -->
+      <p5-component [xx]=x></p5-component>
+      <!-- ==== -->
     </div>
     <!-- /container -->
   `,
